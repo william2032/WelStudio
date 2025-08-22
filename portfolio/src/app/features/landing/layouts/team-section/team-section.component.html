@@ -1,0 +1,68 @@
+<section class="container mx-auto px-4 py-16 lg:py-24">
+  <div class="flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-16">
+    <!-- Content Section -->
+    <div class="lg:w-1/2">
+      <div class="mb-6">
+            <span class="inline-block text-blue-500 text-sm font-medium mb-4 tracking-wide">
+              The Team behind webstudio
+            </span>
+        <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6">
+          A team of creative Who Excited to help you with your Idea
+        </h1>
+        <p class="text-gray-600 text-lg leading-relaxed">
+          Our team of digital product creators and Tech Bring Skilled will take your idea to the next level and help you with your product
+        </p>
+      </div>
+    </div>
+
+    <!-- Team Member Card -->
+    <div class="lg:w-1/2 relative">
+      <!-- Decorative dots pattern -->
+      <div class="absolute -top-8 -right-8 w-24 h-24 opacity-20">
+        <div class="grid grid-cols-8 gap-1">
+          @for (dot of dots(); track $index) {
+            <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+          }
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-xl p-6 lg:p-8 max-w-md mx-auto relative">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="relative">
+            <img
+              [src]="currentMember().image"
+              [alt]="currentMember().name"
+              class="w-16 h-16 rounded-full object-cover"
+            />
+          </div>
+          <div>
+            <h3 class="font-semibold text-gray-900 text-lg">{{ currentMember().name }}</h3>
+            <p class="text-gray-500">{{ currentMember().role }}</p>
+          </div>
+        </div>
+
+        <!-- Navigation arrows -->
+        <div class="flex justify-center gap-2 mt-6">
+          <button
+            (click)="previousMember()"
+            class="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors duration-200"
+            aria-label="Previous team member"
+          >
+            <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+          </button>
+          <button
+            (click)="nextMember()"
+            class="w-10 h-10 rounded-full bg-blue-500 hover:bg-blue-600 flex items-center justify-center transition-colors duration-200"
+            aria-label="Next team member"
+          >
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
