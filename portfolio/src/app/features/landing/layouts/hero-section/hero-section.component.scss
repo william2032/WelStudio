@@ -6,3 +6,9 @@
 .animate-float {
   animation: float 3s ease-in-out infinite;
 }
+
+/* More rounded hexagon to match reference image */
+.rounded-hexagon {
+  clip-path: polygon(20% 0%, 80% 0%, 100% 25%, 100% 75%, 80% 100%, 20% 100%, 0% 75%, 0% 25%);
+  border-radius: 60px;
+}
